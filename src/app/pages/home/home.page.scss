@@ -1,0 +1,120 @@
+/* 1. Pengaturan Dasar Halaman */
+ion-content {
+  --background: #121212; /* Background gelap total */
+}
+
+.welcome-text {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* 2. Statistik & Progress (Fitur Baru) */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  .stat-box {
+    background: #1e293b;
+    padding: 12px;
+    border-radius: 15px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    small {
+      color: #94a3b8;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 5px 0 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+  }
+}
+
+.progress-section {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .progress-outer {
+    background: #334155;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-inner {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.8s ease-in-out;
+  }
+}
+
+/* 3. Header Bagian (Materi, Quiz, dll) */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+/* 4. Komponen Kartu & Tombol */
+ion-card {
+  margin-inline: 0px;
+  border-radius: 25px;
+  background: #1e293b;
+  margin-top: 15px;
+  color: white;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.pill-button {
+  background: #1e293b;
+  border-radius: 50px;
+  padding: 5px 20px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+
+  p {
+    color: white;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background: #2d3e5a;
+  }
+}

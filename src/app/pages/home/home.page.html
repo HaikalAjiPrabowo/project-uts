@@ -1,0 +1,55 @@
+<ion-content class="ion-padding">
+  <p class="welcome-text">Yuk belajar coding 🚀</p>
+
+  <div class="stats-container">
+    <div class="stat-box">
+      <small>Quiz Selesai</small>
+      <p>{{ totalQuiz }}</p>
+    </div>
+    <div class="stat-box">
+      <small>Skor Tertinggi</small>
+      <p>{{ highScore }}</p>
+    </div>
+  </div>
+
+  <div class="progress-section">
+    <div class="progress-label">
+      <span>Progress Belajar</span>
+      <span>{{ progress }}%</span>
+    </div>
+    <div class="progress-outer">
+      <div class="progress-inner" [style.width]="progress + '%'"></div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <ion-icon name="copy" color="primary"></ion-icon>
+    <h3>Materi Coding</h3>
+  </div>
+
+  <ion-card *ngFor="let book of books" (click)="goToDetail(book.id)" mode="ios">
+    <ion-card-header>
+      <ion-card-title>{{ book.title }}</ion-card-title>
+      <ion-card-subtitle>{{ book.author }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content> {{ book.description }} </ion-card-content>
+  </ion-card>
+
+  <div class="section-header">
+    <ion-icon name="laptop" color="primary"></ion-icon>
+    <h3>Mulai Coding</h3>
+  </div>
+
+  <div class="pill-button" (click)="goToPlayground()">
+    <p>Belajar coding langsung dengan contoh code 🚀</p>
+  </div>
+
+  <div class="section-header">
+    <ion-icon name="brain" color="primary"></ion-icon>
+    <h3>Quiz</h3>
+  </div>
+
+  <div class="pill-button" (click)="goToGeneralQuiz()">
+    <p>Uji kemampuan coding kamu 😎</p>
+  </div>
+</ion-content>

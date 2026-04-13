@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Playground</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div
+    id="editor"
+    style="height: 300px; width: 100%; border-radius: 10px"
+  ></div>
+
+  <ion-button expand="block" (click)="runCode()" class="ion-margin-top">
+    Run Code 🚀
+  </ion-button>
+
+  <div class="output-container">
+    <p style="color: #94a3b8; font-size: 12px">OUTPUT:</p>
+    <pre
+      id="output"
+      style="
+        background: #1e293b;
+        color: #38bdf8;
+        padding: 15px;
+        border-radius: 10px;
+        min-height: 50px;
+        white-space: pre-wrap;
+      "
+    ></pre>
+  </div>
+</ion-content>

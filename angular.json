@@ -32,7 +32,12 @@
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": [
+              "node_modules/ace-builds/src-min-noconflict/ace.js",
+              "node_modules/ace-builds/src-min-noconflict/theme-monokai.js",
+              "node_modules/ace-builds/src-min-noconflict/mode-python.js",
+              "node_modules/ace-builds/src-min-noconflict/mode-html.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -112,7 +117,12 @@
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": [
+              "node_modules/ace-builds/src-min-noconflict/ace.js",
+              "node_modules/ace-builds/src-min-noconflict/theme-monokai.js",
+              "node_modules/ace-builds/src-min-noconflict/mode-python.js",
+              "node_modules/ace-builds/src-min-noconflict/mode-html.js"
+            ]
           },
           "configurations": {
             "ci": {
@@ -124,19 +134,15 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@ionic/angular-toolkit"
-    ]
+    "schematicCollections": ["@ionic/angular-toolkit"],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

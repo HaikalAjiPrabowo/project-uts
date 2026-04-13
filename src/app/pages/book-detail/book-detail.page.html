@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/books"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail Buku</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="book">
+  <ion-card>
+    <img src="https://via.placeholder.com/300" />
+
+    <ion-card-header>
+      <ion-card-title>{{ book.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ book.description }}</p>
+
+      <!-- 📖 MATERI -->
+      <h2>📖 Materi</h2>
+      <p>{{ book.content }}</p>
+
+      <!-- 💻 CODE -->
+      <ion-card class="code-card">
+        <ion-card-header>
+          <ion-card-title>💻 Contoh Code</ion-card-title>
+
+          <!-- 🔥 BUTTON COPY -->
+          <ion-button class="copy-btn" (click)="copyCode(book.code)">
+            📋 Copy
+          </ion-button>
+        </ion-card-header>
+
+        <ion-card-content>
+          <pre>{{ book.code }}</pre>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
