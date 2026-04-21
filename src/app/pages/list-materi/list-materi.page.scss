@@ -1,0 +1,67 @@
+.gray-bg {
+  --background: #f8f9fa; // Background abu-abu muda agar kartu putih terlihat menonjol
+}
+
+.list-container {
+  margin-top: 10px;
+}
+
+.topic-card {
+  background: #ffffff;
+  border-radius: 16px; // Membuat sudut melengkung sempurna
+  margin-bottom: 16px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); // Shadow halus
+  border: 1px solid #edf2f7;
+  transition: transform 0.2s;
+
+  &:active {
+    transform: scale(0.98); // Efek membal saat ditekan
+    background: #f1f5f9;
+  }
+
+  .card-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #f0f0f0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .text-box {
+      flex: 1;
+
+      h2 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #2d3748;
+      }
+
+      p {
+        margin: 4px 0 0;
+        font-size: 0.85rem;
+        color: #718096;
+      }
+    }
+
+    .status-icon {
+      color: #cbd5e0;
+      font-size: 1.2rem;
+    }
+  }
+}

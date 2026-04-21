@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'playground',
     loadChildren: () => import('./pages/playground/playground.module').then( m => m.PlaygroundPageModule)
   },
+  {
+    path: 'list-materi',
+    loadChildren: () => import('./pages/list-materi/list-materi.module').then( m => m.ListMateriPageModule)
+  },
 ];
 
 @NgModule({

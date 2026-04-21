@@ -24,29 +24,37 @@
 
   <div class="section-header">
     <ion-icon name="copy" color="primary"></ion-icon>
-    <h3>Materi Coding</h3>
+    <h3>Jalur Belajar Web</h3>
   </div>
 
-  <ion-card *ngFor="let book of books" (click)="goToDetail(book.id)" mode="ios">
+  <ion-card (click)="goToList('HTML')" mode="ios" class="category-card">
     <ion-card-header>
-      <ion-card-title>{{ book.title }}</ion-card-title>
-      <ion-card-subtitle>{{ book.author }}</ion-card-subtitle>
+      <ion-card-title>HTML Dasar</ion-card-title>
+      <ion-card-subtitle>Belajar kerangka website dari nol</ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content> {{ book.description }} </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="goToList('CSS')" mode="ios" class="category-card">
+    <ion-card-header>
+      <ion-card-title>CSS Dasar</ion-card-title>
+      <ion-card-subtitle>Belajar menghias tampilan website</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card (click)="goToList('JS')" mode="ios" class="category-card">
+    <ion-card-header>
+      <ion-card-title>JavaScript Dasar</ion-card-title>
+      <ion-card-subtitle>Belajar membuat website interaktif</ion-card-subtitle>
+    </ion-card-header>
   </ion-card>
 
   <div class="section-header">
     <ion-icon name="laptop" color="primary"></ion-icon>
-    <h3>Mulai Coding</h3>
+    <h3>Tools</h3>
   </div>
 
   <div class="pill-button" (click)="goToPlayground()">
-    <p>Belajar coding langsung dengan contoh code 🚀</p>
-  </div>
-
-  <div class="section-header">
-    <ion-icon name="brain" color="primary"></ion-icon>
-    <h3>Quiz</h3>
+    <p>Belajar coding langsung 🚀</p>
   </div>
 
   <div class="pill-button" (click)="goToGeneralQuiz()">

@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Materi {{ category }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding gray-bg">
+  <div class="list-container">
+    <div class="topic-card" *ngFor="let item of filteredBooks" (click)="goToDetail(item.id)">
+      <div class="card-content">
+        <div class="icon-box">
+        </div>
+        <div class="text-box">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.subtitle }}</p>
+        </div>
+        <div class="status-icon">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

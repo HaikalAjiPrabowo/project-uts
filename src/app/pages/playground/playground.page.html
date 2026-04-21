@@ -3,32 +3,25 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Playground</ion-title>
+    <ion-title>Web Playground</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div
-    id="editor"
-    style="height: 300px; width: 100%; border-radius: 10px"
-  ></div>
+  <div id="editor" style="height: 300px; width: 100%; border-radius: 10px"></div>
 
   <ion-button expand="block" (click)="runCode()" class="ion-margin-top">
-    Run Code 🚀
+    Run Web Code 🚀
   </ion-button>
 
-  <div class="output-container">
-    <p style="color: #94a3b8; font-size: 12px">OUTPUT:</p>
-    <pre
-      id="output"
-      style="
-        background: #1e293b;
-        color: #38bdf8;
-        padding: 15px;
+  <div class="output-container" style="margin-top: 20px;">
+    <p style="color: #94a3b8; font-size: 12px; margin-bottom: 5px;">LIVE PREVIEW:</p>
+    <iframe id="web-preview" style="
+        width: 100%;
+        height: 300px;
+        background: white;
         border-radius: 10px;
-        min-height: 50px;
-        white-space: pre-wrap;
-      "
-    ></pre>
+        border: 2px solid #1e293b;
+      "></iframe>
   </div>
 </ion-content>

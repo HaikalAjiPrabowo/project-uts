@@ -23,14 +23,6 @@ export class BookDetailPage implements OnInit {
     this.book = this.bookService.getBook(id);
   }
 
-  goToQuiz() {
-    if (this.book && this.book.questions) {
-      this.router.navigate(['/quiz'], {
-        state: { questions: this.book.questions },
-      });
-    }
-  }
-
   async copyCode(text: string) {
     await navigator.clipboard.writeText(text);
     alert('Kode berhasil disalin!');
