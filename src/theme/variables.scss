@@ -1,10 +1,23 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
-
+/* LIGHT MODE (default) */
 :root {
-  --ion-color-primary: #2563eb;
-  --ion-color-primary-contrast: #ffffff;
+  --bg-color: #ffffff;
+  --card-color: #f1f5f9;
+  --text-color: #000000;
+  --subtext-color: #64748b;
+  --primary-color: #3b82f6;
 
-  --ion-background-color: #0f172a;
-  --ion-text-color: #ffffff;
+  --ion-background-color: var(--bg-color);
+  --ion-text-color: var(--text-color);
+}
+
+/* DARK MODE */
+body.dark {
+  --bg-color: #121212;
+  --card-color: #1e293b;
+  --text-color: #ffffff;
+  --subtext-color: #94a3b8;
+  --primary-color: #38bdf8;
+
+  --ion-background-color: var(--bg-color);
+  --ion-text-color: var(--text-color);
 }

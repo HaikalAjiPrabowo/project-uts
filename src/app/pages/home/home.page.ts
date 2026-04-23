@@ -68,4 +68,8 @@ export class HomePage implements OnInit {
       queryParams: { cat: category } 
     });
   }
+toggleDarkMode() {
+  const isDark = document.body.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
 }
