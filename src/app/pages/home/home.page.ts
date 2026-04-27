@@ -14,10 +14,18 @@ export class HomePage implements OnInit {
   highScore: string = '0';
   progress: string = '0';
 
+  // ✅ Tambahkan variabel ini untuk melacak status ikon
+  isDarkMode: boolean = false;
+
   constructor(
     private bookService: BookService,
     private router: Router,
-  ) {}
+  ) {
+    // Cek tema saat pertama kali load
+    const savedTheme = localStorage.getItem('theme');
+    this.isDarkMode = savedTheme === 'dark';
+    document.body.classList.toggle('dark', this.isDarkMode);
+  }
 
   ngOnInit() {
     this.books = this.bookService.getBooks();
@@ -30,26 +38,35 @@ export class HomePage implements OnInit {
     this.books = this.bookService.getBooks();
   }
 
+  // ✅ Fungsi Toggle dengan Ikon yang lebih rapi
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle('dark', this.isDarkMode);
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  }
+
+  // --- Fungsi Navigasi ---
   goToDetail(id: number) {
     this.router.navigate(['/book-detail', id]);
   }
 
-  // ✅ Fungsi Quiz Campuran (Khusus materi Web)
+  goToList(category: string) {
+    this.router.navigate(['/list-materi'], { 
+      queryParams: { cat: category } 
+    });
+  }
+
   goToGeneralQuiz() {
     const allBooks = this.bookService.getBooks();
     let allQuestions: any[] = [];
-
     allBooks.forEach((book: any) => {
       if (book.questions && book.questions.length > 0) {
-        // Menggabungkan soal-soal HTML, CSS, dan JS jadi satu
         allQuestions = [...allQuestions, ...book.questions];
       }
     });
 
     if (allQuestions.length > 0) {
-      // Mengacak urutan soal supaya tidak bosan
       allQuestions.sort(() => Math.random() - 0.5);
-
       this.router.navigate(['/quiz'], {
         state: { questions: allQuestions }
       });
@@ -61,15 +78,4 @@ export class HomePage implements OnInit {
   goToPlayground() {
     this.router.navigate(['/playground']);
   }
-
-  goToList(category: string) {
-    // Navigasi ke halaman list-materi sambil membawa info kategori
-    this.router.navigate(['/list-materi'], { 
-      queryParams: { cat: category } 
-    });
-  }
-toggleDarkMode() {
-  const isDark = document.body.classList.toggle('dark');
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-}
 }

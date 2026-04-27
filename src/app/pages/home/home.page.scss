@@ -1,15 +1,17 @@
 /* 1. Pengaturan Dasar Halaman */
 ion-content {
-  --background: #121212; /* Background gelap total */
+  // Menggunakan variabel global Ionic agar background berubah otomatis
+  --background: var(--ion-background-color); 
 }
 
 .welcome-text {
   margin-bottom: 20px;
   font-size: 14px;
-  color: #94a3b8;
+  // Menggunakan warna abu-abu yang aman untuk kedua mode
+  color: var(--ion-color-step-600, #666) !important;
 }
 
-/* 2. Statistik & Progress (Fitur Baru) */
+/* 2. Statistik & Progress */
 .stats-container {
   display: flex;
   justify-content: space-between;
@@ -17,30 +19,33 @@ ion-content {
   margin-bottom: 20px;
 
   .stat-box {
-    background: #1e293b;
+    // Memberikan warna kartu yang berbeda tipis dengan background utama
+    background: var(--ion-color-step-50, #f9f9f9); 
     padding: 12px;
     border-radius: 15px;
     flex: 1;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
     small {
-      color: #94a3b8;
+      // Label "QUIZ SELESAI"
+      color: var(--ion-color-step-600) !important;
       font-size: 11px;
       text-transform: uppercase;
     }
 
     p {
+      // Angka statistik
       margin: 5px 0 0;
       font-size: 20px;
       font-weight: bold;
-      color: #38bdf8;
+      color: var(--ion-color-primary) !important;
     }
   }
 }
 
 .progress-section {
-  background: #1e293b;
+  background: var(--ion-color-step-50, #f9f9f9);
   padding: 15px;
   border-radius: 15px;
   margin-bottom: 25px;
@@ -50,11 +55,13 @@ ion-content {
     justify-content: space-between;
     font-size: 14px;
     font-weight: 500;
+    // Mengikuti warna teks utama (Hitam di Light, Putih di Dark)
+    color: var(--ion-text-color) !important;
     margin-bottom: 10px;
   }
 
   .progress-outer {
-    background: #334155;
+    background: var(--ion-color-step-200, #e0e0e0);
     height: 12px;
     border-radius: 10px;
     overflow: hidden;
@@ -68,7 +75,7 @@ ion-content {
   }
 }
 
-/* 3. Header Bagian (Materi, Quiz, dll) */
+/* 3. Header Bagian */
 .section-header {
   display: flex;
   align-items: center;
@@ -77,20 +84,34 @@ ion-content {
 
   h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    color: white;
+    color: var(--ion-text-color) !important;
   }
 }
 
 /* 4. Komponen Kartu & Tombol */
 ion-card {
   margin-inline: 0px;
-  border-radius: 25px;
-  background: #1e293b;
+  border-radius: 20px;
+  // Kartu akan putih di mode terang, biru gelap di mode malam
+  background: var(--ion-color-step-50, #ffffff) !important;
   margin-top: 15px;
-  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
+
+  ion-card-title {
+    color: var(--ion-text-color) !important;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  ion-card-subtitle {
+    // Teks "BELAJAR KERANGKA WEBSITE..."
+    color: var(--ion-color-step-500, #888) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
   &:hover {
     transform: scale(1.02);
@@ -98,7 +119,7 @@ ion-card {
 }
 
 .pill-button {
-  background: #1e293b;
+  background: var(--ion-color-step-50, #f0f0f0) !important;
   border-radius: 50px;
   padding: 5px 20px;
   margin-top: 10px;
@@ -108,14 +129,22 @@ ion-card {
   transition: 0.3s;
 
   p {
-    color: white;
+    color: var(--ion-text-color) !important;
     font-size: 14px;
     margin: 10px 0;
   }
 
   &:active {
     transform: scale(0.95);
-    background: #2d3e5a;
+    background: var(--ion-color-step-200);
+  }
+}
+
+/* 5. Override Manual Khusus Dark Mode */
+// Bagian ini hanya aktif saat body memiliki class .dark
+body.dark {
+  ion-card, .stat-box, .progress-section, .pill-button {
+    background: #1e293b !important; // Warna biru gelap saat mode malam
   }
 }
 ion-content {
