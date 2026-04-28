@@ -1,39 +1,56 @@
 ion-content {
-  --background: #121212;
+  // Menggunakan variabel background agar sinkron dengan tema gelap
+  --background: #121212; 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .welcome-container {
-  margin-top: 40%;
+  margin-top: 25%; // Disesuaikan agar logo punya ruang
   
-  .logo-animation {
-    font-size: 80px;
-    margin-bottom: 20px;
-    animation: bounce 2s infinite;
+  .logo-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    
+    .app-logo {
+      width: 150px; // Ukuran logo
+      height: 150px;
+      border-radius: 30px; // Membuat sudut logo melengkung halus
+      box-shadow: 0 10px 25px rgba(76, 141, 255, 0.3); // Shadow biru tipis
+      animation: floating 3s ease-in-out infinite;
+    }
   }
 
   h1 {
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: white;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
   }
 
   p {
     color: #94a3b8;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    padding: 0 20px;
   }
 
   ion-button {
     --background: linear-gradient(135deg, #4c8dff, #6a5cff);
-    margin: 0 20px;
-    height: 50px;
+    --box-shadow: 0 8px 20px rgba(106, 92, 255, 0.4);
+    margin: 0 30px;
+    height: 55px;
     font-weight: bold;
+    font-size: 1.1rem;
   }
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+/* Animasi Mengapung yang lebih halus daripada Bounce */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }

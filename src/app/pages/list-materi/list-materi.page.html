@@ -7,11 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding gray-bg">
+<ion-content class="ion-padding">
   <div class="list-container">
-    <div class="topic-card" *ngFor="let item of filteredBooks" (click)="goToDetail(item.id)">
-      <div class="card-content">
-        <div class="icon-box">
+      <div class="topic-card" *ngFor="let item of filteredBooks" (click)="goToDetail(item.id)">
+        <div class="card-content">
+          <div class="icon-box">
+            <ion-icon 
+              [name]="item.category === 'HTML' ? 'logo-html5' : 
+                      item.category === 'CSS' ? 'logo-css3' : 'logo-javascript'"
+              style="font-size: 60px; color: var(--ion-color-primary);">
+            </ion-icon>
         </div>
         <div class="text-box">
           <h2>{{ item.title }}</h2>

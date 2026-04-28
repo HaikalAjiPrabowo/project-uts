@@ -13,10 +13,27 @@ export class PlaygroundPage implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit() {
+    // ✅ KUNCI UTAMA: Arahkan Ace ke CDN agar tidak mencari file lokal yang 404
+    const CDN = 'https://cdn.jsdelivr.net/npm/ace-builds@1.33.0/src-noconflict/';
+    ace.config.set('basePath', CDN);
+    ace.config.set('modePath', CDN);
+    ace.config.set('themePath', CDN);
+    ace.config.set('workerPath', CDN);
+
+    // Inisialisasi editor
     this.editor = ace.edit('editor');
-    this.editor.setTheme('ace/theme/monokai');
     
+    // Set tema dan mode
+    this.editor.setTheme('ace/theme/monokai');
     this.editor.getSession().setMode('ace/mode/html');
+
+    this.editor.setOption("useWorker", false);
+    
+    // Opsional: Agar tampilan kodingan lebih rapi
+    this.editor.setOptions({
+      fontSize: "14px",
+      showPrintMargin: false,
+    });
   }
 
   runCode() {

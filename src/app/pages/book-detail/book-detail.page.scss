@@ -1,9 +1,39 @@
+/* 1. Pengaturan Global Halaman Detail */
+ion-content {
+  --background: var(--ion-background-color);
+  --ion-text-color: var(--text-color);
+  // Memastikan semua teks dasar mengikuti warna tema (Hitam/Putih)
+  color: var(--ion-text-color); 
+}
+
+/* 2. Judul dan Deskripsi Umum */
+h1, h2, h3 {
+  color: var(--ion-text-color) !important;
+  font-weight: bold;
+}
+
+p {
+  color: var(--ion-text-color);
+  line-height: 1.6;
+}
+
+/* 3. Kotak Penjelasan Materi (Sudah OK, kita rapikan sedikit) */
+.materi-box {
+  background: var(--ion-color-step-100, #f4f4f4); 
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 15px;
+  color: var(--ion-text-color); 
+  border-left: 4px solid var(--ion-color-primary);
+}
+
+/* 4. Container Kode (Tetap Dark agar keren) */
 .code-container {
-  background: #0a0e1a; // Biru gelap pekat seperti di gambar
+  background: #0a0e1a; 
   border-radius: 15px;
   margin-top: 20px;
   padding: 15px;
-  color: #a5b4fc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
   .code-header {
     display: flex;
@@ -16,7 +46,7 @@
     span {
       font-weight: bold;
       font-size: 14px;
-      color: #fff;
+      color: #fff; 
     }
   }
 
@@ -26,15 +56,22 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 13px;
     line-height: 1.5;
-    color: #4ade80; // Warna hijau coding
+    color: #4ade80; 
     white-space: pre-wrap;
   }
 }
 
-.materi-box {
-  background: #f4f4f4;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
-  color: #333;
+/* 5. Override Khusus Dark Mode */
+body.dark {
+  .materi-box {
+    background: #1e293b !important; 
+    // Di sini teks akan otomatis putih karena var(--ion-text-color) 
+    // tapi kita paksa putih bersih agar lebih kontras
+    color: #ffffff !important; 
+  }
+
+  // Jika ada teks p atau h2 yang masih membandel hitam
+  h1, h2, h3, p {
+    color: #ffffff !important;
+  }
 }
