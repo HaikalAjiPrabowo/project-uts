@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package io.rehalivan.NgodingYuk;
 
 import com.getcapacitor.BridgeActivity;
 
