@@ -14,18 +14,10 @@ export class HomePage implements OnInit {
   highScore: string = '0';
   progress: string = '0';
 
-  // ✅ Tambahkan variabel ini untuk melacak status ikon
-  isDarkMode: boolean = false;
-
   constructor(
     private bookService: BookService,
     private router: Router,
-  ) {
-    // Cek tema saat pertama kali load
-    const savedTheme = localStorage.getItem('theme');
-    this.isDarkMode = savedTheme === 'dark';
-    document.body.classList.toggle('dark', this.isDarkMode);
-  }
+  ) {}
 
   ngOnInit() {
     this.books = this.bookService.getBooks();
@@ -38,12 +30,6 @@ export class HomePage implements OnInit {
     this.books = this.bookService.getBooks();
   }
 
-  // ✅ Fungsi Toggle dengan Ikon yang lebih rapi
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('dark', this.isDarkMode);
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
-  }
 
   // --- Fungsi Navigasi ---
   goToDetail(id: number) {

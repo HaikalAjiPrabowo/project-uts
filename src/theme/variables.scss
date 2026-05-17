@@ -1,23 +1,15 @@
 /* LIGHT MODE (default) */
 :root {
-  --bg-color: #ffffff;
-  --card-color: #f1f5f9;
-  --text-color: #000000;
-  --subtext-color: #64748b;
+--bg-color: #ffffff !important;
+  --card-color: #ffffff !important;
+  --text-color: #000000 !important;
+  --subtext-color: #475569 !important;
   --primary-color: #3b82f6;
 
-  --ion-background-color: var(--bg-color);
-  --ion-text-color: var(--text-color);
-}
-
-/* DARK MODE */
-body.dark {
-  --bg-color: #121212;
-  --card-color: #1e293b;
-  --text-color: #ffffff;
-  --subtext-color: #64748b;
-  --primary-color: #3b82f6;
-
-  --ion-background-color: var(--bg-color);
-  --ion-text-color: var(--text-color);
+  /* Ini kunci utama yang memaksa halaman Ionic berwarna putih full */
+  --ion-background-color: #ffffff !important;
+  --ion-text-color: #000000 !important;
+  --ion-item-background: #ffffff !important;
+  --ion-card-background: #ffffff !important;
+  --ion-toolbar-background: #ffffff !important; /* Biar header atas ikut putih jika mau */
 }

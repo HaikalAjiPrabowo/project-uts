@@ -55,8 +55,6 @@ ion-content {
     justify-content: space-between;
     font-size: 14px;
     font-weight: 500;
-    // Mengikuti warna teks utama (Hitam di Light, Putih di Dark)
-    color: var(--ion-text-color) !important;
     margin-bottom: 10px;
   }
 
@@ -140,13 +138,7 @@ ion-card {
   }
 }
 
-/* 5. Override Manual Khusus Dark Mode */
-// Bagian ini hanya aktif saat body memiliki class .dark
-body.dark {
-  ion-card, .stat-box, .progress-section, .pill-button {
-    background: #1e293b !important; // Warna biru gelap saat mode malam
-  }
-}
+/* 5. Override Manual Warna */
 ion-content {
   --background: var(--bg-color) !important;
 }

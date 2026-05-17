@@ -24,7 +24,7 @@ export class PlaygroundPage implements AfterViewInit {
     this.editor = ace.edit('editor');
     
     // Set tema dan mode
-    this.editor.setTheme('ace/theme/monokai');
+    this.editor.setTheme('ace/theme/chrome'); // Tema putih bersih standar
     this.editor.getSession().setMode('ace/mode/html');
 
     this.editor.setOption("useWorker", false);
